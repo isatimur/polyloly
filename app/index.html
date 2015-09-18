@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Polymer Starter Kit" />
-  <title>Polymer Starter Kit</title>
+  <title>Personal Website of Software Developer</title>
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
@@ -65,23 +65,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
-          <span class="paper-font-title">Menu</span>
+          <iron-icon icon="" class="isa"></iron-icon>
+          <span class="paper-font-title paper-font-subhead">Personal Website of <br/>Software Developer</span>
+          <style is="custom-style">
+            .isa {
+              --iron-icon-height: 40px;
+              --iron-icon-width: 40px;
+              border-radius: 50%;
+              overflow: hidden;
+              margin:1em;
+              background:url("https://s.gravatar.com/avatar/bf17a35b6f218bf1156fa5c952227ec5?s=40&r=g");
+            }
+          </style>
+
         </paper-toolbar>
 
         <!-- Drawer Content -->
         <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
           <a data-route="home" href="/">
             <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
+            <span>About</span>
           </a>
 
-          <a data-route="users" href="/users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
+          <a data-route="blog" href="/blog">
+            <iron-icon icon="editor:insert-comment"></iron-icon>
+            <span>Blog</span>
           </a>
 
           <a data-route="contact" href="/contact">
-            <iron-icon icon="mail"></iron-icon>
+            <iron-icon icon="communication:contact-phone"></iron-icon>
             <span>Contact</span>
           </a>
         </paper-menu>
@@ -101,7 +113,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Application name -->
           <div class="middle middle-container center horizontal layout">
-            <div class="app-name">Polymer Starter Kit</div>
+            <div class="app-name">Isa Timur <span>{{params.section}}</span></div>
           </div>
 
           <!-- Application sub title -->
@@ -149,18 +161,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             </section>
 
-            <section data-route="users">
+            <section data-route="blog">
               <paper-material elevation="1">
-                <h2 class="paper-font-display2">Users</h2>
+                <h2 class="paper-font-display2">Blog</h2>
                 <p>This is the users section</p>
-                <a href="/users/Rob">Rob</a>
+                <a href="/blog/Rob">Rob</a>
               </paper-material>
             </section>
 
-            <section data-route="user-info">
+            <section data-route="post-info">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">
-                User:<span>{{params.name}}</span>
+                  Post:<span>{{params.name}}</span>
                 </h2>
                 <div>This is <span>{{params.name}}</span>'s section</div>
               </paper-material>
@@ -169,7 +181,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <section data-route="contact">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">Contact</h2>
-                <p>This is the contact section</p>
+                <div class="custom-list">
+                  <paper-icon-item>
+                    <iron-icon icon="icons:account-circle" class="x-scope iron-icon-0" item-icon></iron-icon>
+                    <style is="custom-style">
+                      .custom-list {
+                        background-color: white;
+                        display: inline-block;
+                        width: 270px;
+                        height: 228px;
+                        margin: 12px;
+                      }
+                    </style>
+                    <paper-item-body two-line>
+                      <div>Isa Timur</div>
+                    </paper-item-body>
+
+                  </paper-icon-item>
+
+                  <paper-icon-item>
+                    <iron-icon icon="communication:phone" item-icon></iron-icon>
+                    <paper-item-body two-line>
+                      <div>+7 (918) 380 37 83</div>
+                      <div secondary>Mobile</div>
+                    </paper-item-body>
+                  </paper-icon-item>
+                  <paper-icon-item>
+                    <iron-icon icon="communication:email" item-icon></iron-icon>
+                    <paper-item-body two-line>
+                      <div>isatimur.it@gmail.com</div>
+                      <div secondary>Personal email</div>
+                    </paper-item-body>
+                  </paper-icon-item>
+                  <paper-icon-item>
+                    <iron-icon icon="communication:chat" item-icon></iron-icon>
+                    <paper-item-body two-line>
+                      <div>timur.isa</div>
+                      <div secondary>Skype</div>
+                    </paper-item-body>
+                  </paper-icon-item>
+
+                  <paper-icon-item/>
+                </div>
+
               </paper-material>
             </section>
 

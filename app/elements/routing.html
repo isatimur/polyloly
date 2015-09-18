@@ -17,20 +17,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // More info: https://visionmedia.github.io/page.js/
     page('/', function () {
       app.route = 'home';
+      app.params = '';
     });
 
-    page('/users', function () {
-      app.route = 'users';
-    });
-
-    page('/users/:name', function (data) {
-      app.route = 'user-info';
+    page('/:section', function (data) {
+      if(data.params.section == 'blog'){
+        app.route = 'blog';
+        data.params.section = ' : Blog'
+      }else if(data.params.section == 'contact') {
+        app.route = 'contact';
+        data.params.section = ' : Contact'
+      } else {
+        app.route = 'home';
+        data.params.section = ' : About'
+      }
       app.params = data.params;
     });
 
-    page('/contact', function () {
-      app.route = 'contact';
+    page('/:section/:name', function (data) {
+      app.route = 'post-info';
+      app.params = data.params;
     });
+
+
 
     // add #! before urls
     page({
